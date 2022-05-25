@@ -1,33 +1,22 @@
 import React from "react";
+import MovieCard from "./MovieCard"
 import { movies } from "../data";
 
 function Movies() {
 
-  
-
   const movieData = movies.map((movie)=>{
-    return( 
-    <>
-      <h3>
-      Name: {movie.title}
-      </h3>
-      <h4>
-        Time: {movie.time}
-      </h4>
-      <ul>
-        Genres: 
-        {movie.genres.map((genre)=>{
-    return <li>{genre}</li>
-  })}
-      </ul>
-    </> 
-    )
+    return <MovieCard 
+    key={movie.title} 
+    title={movie.title} 
+    time={movie.time}
+    genres={movie.genres}
+    />
   })
 
   return(
     <div>
       <h1>Movies Page</h1>
-      {movieData}
+     {movieData}
     </div>
   )
 }

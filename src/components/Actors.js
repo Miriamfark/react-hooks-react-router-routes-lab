@@ -1,19 +1,15 @@
 import React from "react";
+import ActorCard from "./ActorCard";
 import { actors } from "../data";
 
 function Actors() {
 
-  const actorsData = actors.map((actor)=>{
-    return(
-      <>
-        <h4>Name: {actor.name}</h4>
-        <ul>Movies:
-          {actor.movies.map((movie)=>{
-          return <li>{movie}</li>
-        })}
-        </ul>
-      </>
-    )
+  const actorsData = actors.map((actor, index)=>{
+    return <ActorCard 
+    key={actor.name}
+    name={actor.name}
+    movies={actor.movies}
+    />
   })
 
   return(

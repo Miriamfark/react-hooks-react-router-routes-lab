@@ -1,19 +1,15 @@
 import React from "react";
+import DirectorCard from "./DirectorCard";
 import { directors } from "../data";
 
 function Directors() {
 
   const directorsData = directors.map((director)=>{
-    return (
-      <div>
-        <h4>Name: {director.name}</h4>
-        <ul> Movies:
-        {director.movies.map((movie)=>{
-          return <li>{movie}</li>
-        })}
-        </ul>
-      </div>
-    )
+    return <DirectorCard 
+    key={director.name}
+    name={director.name}
+    movies={director.movies}
+    />
   })
 
   return(
